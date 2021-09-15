@@ -1,0 +1,31 @@
+class Solution
+{
+    String colName (long n)
+    {
+        // your code here
+        String ans="";
+        
+         long temp=n;
+        while(n>0)
+         {
+            temp=n%26;
+            if(temp==0)
+            {
+             ans='Z'+ans;
+             n=n-26;
+             }
+            
+            else
+            {
+              n=n-temp;
+              ans= Character. toString((char) (temp+64))+ans; 
+        
+            }
+              n/=26;
+        }
+        return ans;
+        
+       // return colName(n/26)+colName(n%26);
+        
+    }
+}
